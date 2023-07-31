@@ -212,8 +212,15 @@ public class MainActivitylistado extends AppCompatActivity implements SearchView
         ImageView dialogImageView = dialogView.findViewById(R.id.dialogImageView);
         TextView dialogTitle = dialogView.findViewById(R.id.dialogTitle);
         TextView dialogDescription = dialogView.findViewById(R.id.dialogDescription);
+        TextView dialogestado = dialogView.findViewById(R.id.estado);
+        TextView dialogcodigo = dialogView.findViewById(R.id.codigofuente);
+
+
+
         dialogTitle.setText(proyecto.getNombre_proyecto());
         dialogDescription.setText(proyecto.getDescripcion());
+        dialogestado.setText(proyecto.getEstado());
+        dialogcodigo.setText(proyecto.getCodigo_fuente());
         Glide.with(this)
                 .load(proyecto.getFoto()) // Coloca la URL de la imagen que deseas mostrar
                 .into(dialogImageView);
