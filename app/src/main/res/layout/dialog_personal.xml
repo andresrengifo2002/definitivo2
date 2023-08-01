@@ -8,9 +8,15 @@
     android:background="#FFFFFF">
 
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="217dp"
+        android:layout_height="476dp"
         android:gravity="center"
         android:orientation="vertical"
         tools:ignore="MissingConstraints">
@@ -84,5 +90,7 @@
 
 
     </LinearLayout>
+
+    </ScrollView>
 
     </androidx.cardview.widget.CardView>
