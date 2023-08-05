@@ -67,16 +67,16 @@ public class MainActivitylistado extends AppCompatActivity implements SearchView
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         drawerLayout = findViewById(R.id.drawer);
-        navigationView = findViewById(R.id.navigationView);
+         /*navigationView = findViewById(R.id.navigationView);*/
 
 
 
         drawerLayout = findViewById(R.id.drawer);
-        navigationView = findViewById(R.id.navigationView);
+       /* navigationView = findViewById(R.id.navigationView);*/
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
-        actionBarDrawerToggle.syncState();
+       /* actionBarDrawerToggle.syncState();*/
 
         listaListadoProyectosAdapter = new ListaListadoProyectosAdapter(this);
         recyclerView.setAdapter(listaListadoProyectosAdapter);
@@ -94,7 +94,7 @@ public class MainActivitylistado extends AppCompatActivity implements SearchView
 
         obtenerDatos();
 
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+    /*    navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
@@ -113,16 +113,16 @@ public class MainActivitylistado extends AppCompatActivity implements SearchView
                         return false;
                 }
             }
-        });
+        });*/
 
     }
 
-    private void remplaceFragment(Fragment fragment){
+  /*  private void remplaceFragment(Fragment fragment){
         FragmentManager frgManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = frgManager.beginTransaction();
         fragmentTransaction.replace(R.id.fragmenPadre, fragment);
         fragmentTransaction.commit();
-    }
+    }*/
 
     public void enviarProyecto(Listadoproyectos listadoproyectos) {
 

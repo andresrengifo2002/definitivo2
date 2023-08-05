@@ -42,10 +42,10 @@ public class MenuPrincipal extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         drawerLayout = findViewById(R.id.drawer);
-        navigationView = findViewById(R.id.navigationView);
+        /*navigationView = findViewById(R.id.navigationView);*/
 
         drawerLayout = findViewById(R.id.drawer);
-        navigationView = findViewById(R.id.navigationView);
+       /* navigationView = findViewById(R.id.navigationView);*/
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
@@ -73,12 +73,12 @@ public class MenuPrincipal extends AppCompatActivity {
         });
     }
 
-        private void remplaceFragment(Fragment fragment){
+      /*  private void remplaceFragment(Fragment fragment){
             FragmentManager frgManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = frgManager.beginTransaction();
             fragmentTransaction.replace(R.id.fragmenPadre, fragment);
             fragmentTransaction.commit();
-        }
+        }*/
 
         public void enviarProyecto(Listadoproyectos listadoproyectos) {
 
