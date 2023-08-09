@@ -42,7 +42,7 @@
                 android:textSize="22sp" />
 
             <TextView
-                android:id="@+id/verMasTextView"
+                android:id="@+id/cerrarseccion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="verMasClick"

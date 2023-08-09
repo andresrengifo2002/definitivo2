@@ -1,8 +1,10 @@
 package com.example.bancoproyectos;
 
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -33,6 +35,8 @@ public class Inicio extends AppCompatActivity {
     Button boton , showPasswordButton;
     ImageView myImage;
 
+    SharedPreferences sharedPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,8 +46,10 @@ public class Inicio extends AppCompatActivity {
         etc = (EditText) findViewById(R.id.edtcontraseña);
         boton = findViewById(R.id.buttoniniciar);
         showPasswordButton = findViewById(R.id.buttonver);
-        ImageView myImage = findViewById(R.id.imageView4);
+
         EditText passwordEditText = findViewById(R.id.edtcontraseña);
+
+
         showPasswordButton.setOnClickListener(new View.OnClickListener() {
             boolean isPasswordVisible = false;
 
@@ -64,14 +70,8 @@ public class Inicio extends AppCompatActivity {
             }
         });
 
-        myImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Uri uri = Uri.parse("https://www.facebook.com/SENACauca");
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
-            }
-        });
+
+
 
 
 
@@ -93,11 +93,19 @@ public class Inicio extends AppCompatActivity {
                          if(response.isSuccessful()) {
                              Login login = response.body();
                              String token=login.getAccess_token();
-                             /* Toast.makeText(Inicio.this,token,Toast.LENGTH_LONG).show();*/
                              Intent I = new Intent(Inicio.this, MainActivitylistado.class);
                              I.putExtra("token",token);
                              startActivity(I);
+                             finish();
 
+
+                         }else {
+                             Login login = response.body();
+                             String token=login.getAccess_token();
+                             SharedPreferences.Editor editor = sharedPreferences.edit();
+                             editor.putString("accessToken",token);
+                             sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+                             token = sharedPreferences.getString("accessToken" , null);
 
                          }
 

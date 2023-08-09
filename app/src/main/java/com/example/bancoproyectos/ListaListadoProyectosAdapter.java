@@ -34,7 +34,7 @@ public class ListaListadoProyectosAdapter extends RecyclerView.Adapter<ListaList
             image=itemView.findViewById(R.id.image);
 
 
-            verMasTextView = itemView.findViewById(R.id.verMasTextView);
+            verMasTextView = itemView.findViewById(R.id.cerrarseccion);
         }
 
     }

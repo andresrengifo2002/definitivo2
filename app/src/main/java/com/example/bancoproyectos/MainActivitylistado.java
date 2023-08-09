@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -57,6 +58,8 @@ public class MainActivitylistado extends AppCompatActivity implements SearchView
     FragmentTransaction fragmentTransaction;
 
     private ArrayList<Listadoproyectos> listaProyectos = new ArrayList<>();
+
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,6 +117,20 @@ public class MainActivitylistado extends AppCompatActivity implements SearchView
                 }
             }
         });*/
+
+    }
+
+    public void logout(View view) {
+
+        SharedPreferences sharedPreferences = getSharedPreferences("token",MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean("token",true);
+        editor.clear();
+        editor.apply();
+        Intent intent = new Intent(this, Inicio.class);
+        startActivity(intent);
+        finish();
+
 
     }
 
