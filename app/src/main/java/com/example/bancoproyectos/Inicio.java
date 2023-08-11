@@ -77,7 +77,7 @@ public class Inicio extends AppCompatActivity {
 
 
         retrofit = new Retrofit.Builder()
-                .baseUrl("https://lexa2334.pythonanywhere.com/api/")
+                .baseUrl("https://lexa2803.pythonanywhere.com/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         loginApiService=retrofit.create(LoginApiService.class);
